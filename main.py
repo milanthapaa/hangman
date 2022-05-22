@@ -28,14 +28,22 @@ def hangman():
         user_letter = input("Guess a letter: ").upper()
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
-            print(lives_dict.get(chance))
             if user_letter in word_letters:
                 word_letters.remove(user_letter)
+            else:
+                print(lives_dict.get(chance))
+                chance -= 1
         elif user_letter in used_letters:
             print("You've already used this character!")
         else:
             print("Invalid character. Please try again.")
-        chance -= 1
+
+    if len(word_letters) <= 0:
+        print("CONGRATULATION!")
+        print("YOU'VE WON!")
+    else:
+        print("GAME OVER!")
+        print("TRY AGAIN!")
 
 
 hangman()
