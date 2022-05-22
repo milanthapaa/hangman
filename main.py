@@ -17,6 +17,7 @@ def hangman():
     chance = 6
     # getting a user input
     while len(word_letters) > 0 and chance >= 0:
+        print(f"You have {chance} lives.")
         # letter used
         print('You have used these letters: ', ''.join(used_letters))
 
