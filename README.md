@@ -1,2 +1,2 @@
 # hangman
-Simple hangman console game
+Used module - string, random_words
